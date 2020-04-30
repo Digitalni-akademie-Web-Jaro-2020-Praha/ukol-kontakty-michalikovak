@@ -1,10 +1,126 @@
-/* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
-
-body {
-	font-family: sans-serif;
-	font-size: 14px;
+html {
+  box-sizing: border-box;
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
 }
 
-/* ---------------------------------------------------- */
+body {
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.kontejner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.osoba {
+  flex-shrink: 1;
+  flex-grow: 1;
+  overflow: auto;
+  margin-left: 10px;
+  padding: 20px 10px;
+  border: 1px solid lightblue;
+  border-radius: 20px;
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  margin-top: 5px;
+}
+
+@media only screen and (min-width: 961px) {
+  .osoba {
+    width: 100%;
+    height: 285px;
+    padding: 15px 5px;
+  }
+  .jarmila {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 541px) and (max-width: 960px) {
+  .kontejner {
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+
+  .osoba {
+    flex-basis: 48%;
+    height: 180px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  .foto {
+    float: left;
+    padding-bottom: 20px;
+    bottom: 10px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .lucie,
+  .jarmila {
+    margin-left: 0;
+  }
+
+  .jarmila,
+  .lucie,
+  .klotylda,
+  .lucinda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  img,
+  .popis {
+    flex-shrink: 1;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .kontejner {
+    flex-direction: column;
+  }
+
+  .osoba {
+    height: 270px;
+    width: 260px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+  }
+
+  .jarmila,
+  .lucie,
+  .klotylda,
+  .lucinda {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  img,
+  .popis {
+    flex-shrink: 1;
+    margin: 0px;
+    width: 80%;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* Ahoj - kdokoli, kdo se na tohle budes divat :D je to asi docela prasacka verze, ale +- to funguje (nevim zda-li se to melo shrinkovat, to z obrazku ze zadani neni poznat :D), celkove si nejsem jista, ze tohle ma byt finalni podoba :D ale snaha byla :D :D :D */

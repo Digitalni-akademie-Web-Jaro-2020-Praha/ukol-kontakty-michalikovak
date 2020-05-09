@@ -16,6 +16,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
 }
 
 .osoba {
@@ -39,88 +40,79 @@ h2 {
   margin-top: 5px;
 }
 
-@media only screen and (min-width: 961px) {
-  .osoba {
-    width: 100%;
-    height: 285px;
-    padding: 15px 5px;
-  }
-  .jarmila {
-    margin-left: 0;
-  }
+.osoba {
+  height: 270px;
+  width: 260px;
+  max-width: 540px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  margin-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-@media only screen and (min-width: 541px) and (max-width: 960px) {
+img,
+.popis {
+  flex-shrink: 1;
+  margin: 0px;
+  width: 80%;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (min-width: 541px) and (max-width: 960px) {
   .kontejner {
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: row;
     position: relative;
   }
 
   .osoba {
     flex-basis: 48%;
     height: 180px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-  }
-
-  .foto {
-    float: left;
-    padding-bottom: 20px;
-    bottom: 10px;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .lucie,
-  .jarmila {
-    margin-left: 0;
-  }
-
-  .jarmila,
-  .lucie,
-  .klotylda,
-  .lucinda {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 0;
+    margin-right: 10px;
+    display: inline-block;
   }
+
+  .foto img {
+    float: left;
+    width: 6rem;
+  }
+
   img,
   .popis {
+    width: auto;
     flex-shrink: 1;
-    width: 100%;
+  }
+
+  .popis {
+    text-align: center;
+    font-size: 97%;
+    margin-left: 10px;
   }
 }
 
-@media only screen and (max-width: 540px) {
+@media screen and (min-width: 961px) {
   .kontejner {
-    flex-direction: column;
-  }
-
-  .osoba {
-    height: 270px;
-    width: 260px;
-    margin-bottom: 5px;
-    padding-bottom: 5px;
-  }
-
-  .jarmila,
-  .lucie,
-  .klotylda,
-  .lucinda {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-direction: row;
+    position: relative;
   }
-
-  img,
-  .popis {
-    flex-shrink: 1;
-    margin: 0px;
-    width: 80%;
-    padding: 0;
-    margin: 0;
+  .osoba {
+    display: flex;
+    width: 24%;
+    height: 285px;
+    padding: 15px 5px;
+    margin-left: 0;
+    margin-right: 10px;
+    text-align: center;
   }
 }
 
-/* Ahoj - kdokoli, kdo se na tohle budes divat :D je to asi docela prasacka verze, ale +- to funguje (nevim zda-li se to melo shrinkovat, to z obrazku ze zadani neni poznat :D), celkove si nejsem jista, ze tohle ma byt finalni podoba :D ale snaha byla :D :D :D */
+/*Ahoj Tome, promin, dostala jsem se k te oprave az dnes :D - smazala jsem ty selektory, co se ti nelibily a udelala to bez media queries na tu nejmensi - mobilovou verzi (kterou jsem udelala jako vychozi), zbytek jsem nechala +- jak byl :D, kdyby se ti tam neco jeste hooodne nelibilo, tak dej vedet :) diky, Klara*/
